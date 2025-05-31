@@ -65,7 +65,7 @@ strong {
     }
     .barber-stripe {
   width: 100%;
-  height: 8px;
+  height: 4px;
   background: repeating-linear-gradient(
     45deg,
     red,
@@ -76,6 +76,23 @@ strong {
     #1E37F0 36px
   );
     }
+    .barber-stripe-vertical {
+  height: 100vh; /* Full height of the page */
+  width: 5px;     /* Thickness */
+  background: repeating-linear-gradient(
+    135deg,
+    red,
+    red 12px,
+    white 12px,
+    white 24px,
+    blue 24px,
+    blue 36px
+  );
+  position: fixed; /* Stick to side */
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
  .cta {
       background-color: #0d47a1;
       color: #fff;
@@ -90,20 +107,23 @@ strong {
     @media (max-width:767px) {
         .wood-pattern{
             background-size:100%;
-            height:50px
+            height:30px
         }
     }
     </style>
 
 </head>
   <body>
-    <div class="wood-pattern"></div>
+                        <div class="barber-stripe-vertical"></div>
+
+    
+    <!-- <div class="barber-stripe"></div> -->
 
     <!-- Hero / Intro -->
-    <section class="py-5">
+    <section class="py-3 py-md-5">
     <div class="container">
         <div class="row d-flex justify-content-between align-items-center">
-            <div class="col-md-7 mb-4 mb-md-0">
+            <div class="col-md-7 mb-4 mb-md-0 text-center text-md-start">
                 <a href="./"><img src="./img/logo-barbier-bw.svg" alt="" class="logo"></a>
                 <div class="mt-0 h4">BARBIER <span style="color:#1976d2;">B.</span><span style="color:#d32f2f;">W</div>
                 <h1>Coupes de cheveux pour hommes et enfants à Gatineau</h1>
@@ -119,21 +139,6 @@ strong {
     </div>
     </section>
 
-    <div class="barber-stripe"></div>
-    <section class="bg-dark pt-4">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-md-3">
-                    <img src="./img/william.png" alt="" class="img-fluid">
-                </div>
-                <div class="col-md-9">
-                    <h2 class="mb-4">Une équipe locale qui connaît ça</h2>
-                    <p>Chez <strong>Barbier BW</strong>, Sam, William et Elias coupent les cheveux avec attention et simplicité, que ce soit pour les adultes ou les enfants.</p>
-                    <a href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8" target="_blank" class="btn btn-outline-light mt-3">Entrez sans rendez-vous</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="py-5">
         <div class="container">
@@ -148,24 +153,36 @@ strong {
                     <img src="./img/beard-groom.png" alt="" class="img-fluid object-fit-cover rounded-5" style="width:100%;height:350px" data-aos="fade-up" data-aos-duration="1000">
                 </div>
             </div>
+            <div class="text-center py-5">
+                <h2 class="mb-4">💈 Une équipe locale qui connaît ça</h2>
+                <p>Chez <strong>Barbier BW</strong>, Sam, William et Elias coupent les cheveux avec attention et simplicité, que ce soit pour les adultes ou les enfants.</p>
+                <a href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8" target="_blank" class="btn btn-outline-light mt-3">Entrez sans rendez-vous</a>
+            </div>
+
         </div>
     </section>
 
-
-
-
-    <section class="py-5">
+    <section class=" py-5">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-md-5 mb-3 mb-md-0"  data-aos="fade-up" data-aos-duration="1000">                            
-                    <h2 class="my-4">Heures d'ouverture</h2>
-                    <p>Lundi - vendredi 9h -18h <br>
-                    Samedi 9h - 16h <br>
-                    Dimanche - Fermé</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1398.5033742879396!2d-75.68502107919181!3d45.48980885019868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce1bb5b7249b1b%3A0x6357c5fbc831d5ea!2sBarber%20BW!5e0!3m2!1sen!2sca!4v1748634670619!5m2!1sen!2sca" width="100%" height="250" style="border:0;border-radius:24px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                   
+                <div class="col-md-5 mb-5 mb-md-0"  data-aos="fade-up" data-aos-duration="1000">   
+                    <img src="./img/building.jpg" alt="" class="img-fluid rounded-5">
+                    <div class="text-center text-md-start">
+                        <h2 class="my-4">Heures d'ouverture</h2>
+                        <p>Lundi - vendredi 9h -18h <br>
+                        Samedi 9h - 16h <br>
+                        Dimanche - Fermé</p>
+                        <h2 class="mt-5">Contact</h2>
+                        <p>📍 811 Boul. Saint-René O, Gatineau<br>📞 (873) 655-3347</p>
+                        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1398.5033742879396!2d-75.68502107919181!3d45.48980885019868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce1bb5b7249b1b%3A0x6357c5fbc831d5ea!2sBarber%20BW!5e0!3m2!1sen!2sca!4v1748634670619!5m2!1sen!2sca" width="100%" height="250" style="border:0;border-radius:24px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    -->
+                    </div>                         
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="bg-dark p-5 rounded-5">
+                        <div class="barber-stripe"></div>
+
+
+                    <div class="bg-white text-dark p-5 rounded-0">
+
                         <h2>Liste de prix</h2>
                         <div class="d-flex justify-content-between border-bottom py-3">
                             <span>Coupe de cheveux</span>
@@ -195,21 +212,16 @@ strong {
                             <span>Enfants de moins de 8 ans</span>
                             <span>16 $</span>
                         </div>
-                        <p class="small mt-2 text-end text-light fst-italic">(taxes en sus)</p>
+                        <p class="text-muted small mt-2 text-end text-light fst-italic">(taxes en sus)</p>
                         </div>
                 </div>
             </div>                    
         </div>
     </section>
 
-    <section>
+    <footer class="pb-5">
         <div class="container text-center">
             <a href="./"><img src="./img/logo-barbier-bw.svg" alt="" class="logo" style="max-width:69px"></a>
-        </div>
-    </section>
-
-    <footer class="py-5 bg-dark">
-        <div class="container">
             <div class="d-flex justify-content-center">
                 <small>© 2025 Barbier BW. Tous droits réservés • Conception web par <a href="https://loogart/com" target="_blank" class="text-light">Loogart</a></small>
             </div>
