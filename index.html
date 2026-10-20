@@ -222,7 +222,7 @@
         .hero-photo {
             display: block;
             width: 100%;
-            min-height: 420px;
+            height: clamp(360px, 60vh, 560px);
             background: linear-gradient(180deg, #171717 0%, #0d0d0d 100%);
             border-radius: 2rem;
             object-fit: cover;
@@ -239,7 +239,7 @@
             }
 
             .hero-photo {
-                min-height: 300px;
+                height: clamp(280px, 45vh, 360px);
             }
         }
 
