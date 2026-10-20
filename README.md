@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Barbier BW - Services de Barbier Professionnels à Gatineau</title>
+
+    <meta
+        name="description"
+        content="Barbier BW offre des services de barbier de haute qualité : coupes de cheveux, tailles de barbe, rasage à la serviette chaude. Sans rendez-vous ou appel au 873-354-8577."
+    >
+    <meta
+        name="keywords"
+        content="Barbier BW, Barbier, Coupe de cheveux, Taille de barbe, Rasage, William, Bassam, Elias, Sans rendez-vous, Salon de coiffure homme"
+    >
+    <meta name="author" content="Barbier BW">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.barbierbw.com/">
+    <meta
+        property="og:title"
+        content="Barbier BW - Services de Barbier Professionnels à Gatineau"
+    >
+    <meta
+        property="og:description"
+        content="Un look impeccable avec Barbier BW. Sans rendez-vous ou réservez par téléphone."
+    >
+    <meta
+        property="og:image"
+        content="https://barbierbw.com/img/og-image.png"
+    >
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.barbierbw.com/">
+    <meta
+        name="twitter:title"
+        content="Barbier BW - Services de Barbier Professionnels à Gatineau"
+    >
+    <meta
+        name="twitter:description"
+        content="Coupes & tailles de barbe de qualité. Sans rendez-vous. Contactez William au 873-354-8577."
+    >
+    <meta
+        name="twitter:image"
+        content="https://barbierbw.com/img/og-image.png"
+    >
+
+    <!-- Favicons -->
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/img/favicon-32x32.png"
+    >
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/img/favicon-16x16.png"
+    >
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/img/apple-touch-icon.png"
+    >
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta name="theme-color" content="#161717">
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+        crossorigin="anonymous"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- AOS Animations -->
+    <link
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+        rel="stylesheet"
+    >
+
+    <style>
+        /* ----------------------------------
+           Global
+        ---------------------------------- */
+
+        body {
+            background: #161717;
+            color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 500;
+        }
+
+        p,
+        li,
+        td {
+            font-weight: 400;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        .logo {
+            width: 100px;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        /* ----------------------------------
+           Barber Stripes
+        ---------------------------------- */
+
+        .barber-stripe {
+            width: 100%;
+            height: 4px;
+            background: repeating-linear-gradient(
+                45deg,
+                red,
+                red 12px,
+                white 12px,
+                white 24px,
+                #1e37f0 24px,
+                #1e37f0 36px
+            );
+        }
+
+        .barber-stripe-vertical {
+            height: 100vh;
+            width: 5px;
+            background: repeating-linear-gradient(
+                135deg,
+                red,
+                red 12px,
+                white 12px,
+                white 24px,
+                blue 24px,
+                blue 36px
+            );
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .cta {
+            background-color: #0d47a1;
+            color: #fff;
+        }
+
+        /* ----------------------------------
+           Wood Pattern
+        ---------------------------------- */
+
+        .wood-pattern {
+            background-image: url("./img/pattern-wood.jpg");
+            width: 100%;
+            height: 69px;
+            background-size: 50%;
+            background-repeat: repeat-x;
+        }
+
+        /* ----------------------------------
+           NEW: Our Barbers
+        ---------------------------------- */
+
+        .team-section {
+            background-color: #161717;
+        }
+
+        .team-heading {
+            max-width: 680px;
+            margin-inline: auto;
+        }
+
+        .team-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #aeb5b5;
+        }
+
+        .team-card {
+            height: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            background-color: #222424;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .team-photo {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center top;
+            background-color: #252525;
+        }
+
+        .team-card-body {
+            padding: 22px 18px 25px;
+            text-align: center;
+        }
+
+        .team-name {
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .team-role {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #b9bdbd;
+        }
+
+        .team-stripe {
+            height: 5px;
+            background: repeating-linear-gradient(
+                45deg,
+                #d32f2f 0,
+                #d32f2f 12px,
+                #fff 12px,
+                #fff 24px,
+                #1e37f0 24px,
+                #1e37f0 36px
+            );
+        }
+
+        /* ----------------------------------
+           Responsive
+        ---------------------------------- */
+
+        @media (max-width: 767px) {
+            .wood-pattern {
+                background-size: 100%;
+                height: 30px;
+            }
+
+            .team-heading {
+                padding-inline: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .team-card {
+                transition: none;
+            }
+
+            .team-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Decoration -->
+    <div class="barber-stripe-vertical" aria-hidden="true"></div>
+
+    <!-- ==================================
+         Hero / Intro
+    ================================== -->
+
+    <section class="py-3 py-md-5">
+        <div class="container">
+            <div class="row d-flex justify-content-between align-items-center">
+
+                <div class="col-md-7 mb-4 mb-md-0 text-center text-md-start">
+
+                    <a href="./">
+                        <img
+                            src="./img/logo-barbier-bw.svg"
+                            alt="Logo Barbier BW"
+                            class="logo"
+                        >
+                    </a>
+
+                    <div class="mt-0 h4">
+                        BARBIER
+                        <span style="color:#1976d2;">B.</span><span style="color:#d32f2f;">W</span>
+                    </div>
+
+                    <h1>
+                        Coupes de cheveux pour hommes et enfants à Gatineau
+                    </h1>
+
+                    <p class="lead">
+                        Trois barbiers de confiance, sans rendez-vous.
+                    </p>
+
+                    <p class="small">
+                        📍 811 Boul. Saint-René O, Gatineau
+                        <br>
+                        📞 (873) 655-3347
+                    </p>
+
+                    <a
+                        href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-lg btn-outline-light mt-4"
+                    >
+                        Passe-nous voir !
+                    </a>
+
+                </div>
+
+                <div class="col-md-5">
+                    <picture>
+                        <source srcset="./img/haircut-2.webp" type="image/webp">
+                        <img
+                            src="./img/haircut-2.png"
+                            alt="Coupe de cheveux chez Barbier BW"
+                            class="img-fluid rounded-5 object-fit-cover"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            loading="eager"
+                            decoding="async"
+                        >
+                    </picture>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================
+         Photo Gallery and CTA
+    ================================== -->
+
+    <section class="py-5">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <picture>
+                        <source srcset="./img/haircut-1.webp" type="image/webp">
+                        <img
+                            src="./img/haircut-1.png"
+                            alt="Coupe de cheveux"
+                            class="img-fluid object-fit-cover rounded-5"
+                            style="width:100%;height:350px"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </picture>
+                </div>
+
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <picture>
+                        <source srcset="./img/haircut-kid.webp" type="image/webp">
+                        <img
+                            src="./img/haircut-kid.png"
+                            alt="Coupe de cheveux pour enfant"
+                            class="img-fluid object-fit-cover rounded-5"
+                            style="width:100%;height:350px"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </picture>
+                </div>
+
+                <div class="col-md-5 mb-3 mb-md-0">
+                    <picture>
+                        <source srcset="./img/beard-groom.webp" type="image/webp">
+                        <img
+                            src="./img/beard-groom.png"
+                            alt="Entretien de la barbe"
+                            class="img-fluid object-fit-cover rounded-5"
+                            style="width:100%;height:350px"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </picture>
+                </div>
+
+            </div>
+
+            <div class="text-center py-5">
+
+                <h2 class="mb-4">
+                    💈 Une équipe locale qui connaît ça
+                </h2>
+
+                <p>
+                    Chez <strong>Barbier BW</strong>, Bassam, William et Elias
+                    coupent les cheveux avec attention et simplicité,
+                    que ce soit pour les adultes ou les enfants.
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-light mt-3"
+                >
+                    Entrez sans rendez-vous
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================================
+         NEW: Meet Our Barbers
+    ================================== -->
+
+    <section
+        id="notre-equipe"
+        class="team-section py-5"
+        aria-labelledby="team-title"
+    >
+        <div class="container py-md-4">
+
+            <!-- Section heading -->
+            <div class="team-heading text-center mb-5">
+
+                <p class="team-eyebrow mb-2">
+                    Barbier B.W · Gatineau
+                </p>
+
+                <h2 id="team-title" class="mb-3">
+                    Rencontrez nos barbiers
+                </h2>
+
+                <p class="text-light opacity-75">
+                    Trois barbiers, une même passion.
+                    Bassam, William et Elias vous accueillent
+                    dans une ambiance conviviale pour une
+                    coupe qui vous ressemble.
+                </p>
+
+            </div>
+
+            <!-- Barber cards -->
+            <div class="row g-4 justify-content-center">
+
+                <!-- Bassam -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <article
+                        class="team-card"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                    >
+
+                        <picture>
+                            <source srcset="./img/barbier1-bassam.webp" type="image/webp">
+                            <img
+                                src="./img/barbier1-bassam.png"
+                                alt="Bassam, barbier chez Barbier BW"
+                                class="team-photo"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </picture>
+
+                        <div class="team-card-body">
+                            <h3 class="team-name">Bassam</h3>
+                            <p class="team-role">Barbier</p>
+                        </div>
+
+                        <div class="team-stripe" aria-hidden="true"></div>
+
+                    </article>
+
+                </div>
+
+                <!-- William -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <article
+                        class="team-card"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                        data-aos-delay="100"
+                    >
+
+                        <picture>
+                            <source srcset="./img/barbier2-william.webp" type="image/webp">
+                            <img
+                                src="./img/barbier2-william.png"
+                                alt="William, barbier chez Barbier BW"
+                                class="team-photo"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </picture>
+
+                        <div class="team-card-body">
+                            <h3 class="team-name">William</h3>
+                            <p class="team-role">Barbier</p>
+                        </div>
+
+                        <div class="team-stripe" aria-hidden="true"></div>
+
+                    </article>
+
+                </div>
+
+                <!-- Elias -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <article
+                        class="team-card"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                        data-aos-delay="200"
+                    >
+
+                        <picture>
+                            <source srcset="./img/barbier3-elias.webp" type="image/webp">
+                            <img
+                                src="./img/barbier3-elias.png"
+                                alt="Elias, barbier chez Barbier BW"
+                                class="team-photo"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </picture>
+
+                        <div class="team-card-body">
+                            <h3 class="team-name">Elias</h3>
+                            <p class="team-role">Barbier</p>
+                        </div>
+
+                        <div class="team-stripe" aria-hidden="true"></div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+            <!-- Team CTA -->
+            <div class="text-center mt-5">
+
+                <p class="mb-3">
+                    Une coupe pour vous ou vos enfants ?
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-light btn-lg"
+                >
+                    Passez nous voir !
+                </a>
+
+                <p class="small text-secondary mt-3 mb-0">
+                    Sans rendez-vous ·
+                    811 Boul. Saint-René O, Gatineau
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================================
+         Contact and Prices
+    ================================== -->
+
+    <section class="py-5">
+        <div class="container">
+
+            <div class="row justify-content-between">
+
+                <!-- Contact -->
+                <div
+                    class="col-md-5 mb-5 mb-md-0"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                >
+
+                    <picture>
+                        <source srcset="./img/building.webp" type="image/webp">
+                        <img
+                            src="./img/building.jpg"
+                            alt="Façade du Barbier BW à Gatineau"
+                            class="img-fluid rounded-5"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </picture>
+
+                    <div class="text-center text-md-start">
+
+                        <h2 class="my-4">
+                            Heures d'ouverture
+                        </h2>
+
+                        <p>
+                            Lundi - vendredi 9h - 18h
+                            <br>
+                            Samedi 9h - 16h
+                            <br>
+                            Dimanche - Fermé
+                        </p>
+
+                        <h2 class="mt-5">
+                            Contact
+                        </h2>
+
+                        <p>
+                            📍 811 Boul. Saint-René O, Gatineau
+                            <br>
+                            📞 (873) 655-3347
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Prices -->
+                <div
+                    class="col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                >
+
+                    <div class="barber-stripe"></div>
+
+                    <div class="bg-white text-dark p-5 rounded-0">
+
+                        <h2>Liste de prix</h2>
+
+                        <div class="d-flex justify-content-between border-bottom py-3">
+                            <span>Coupe de cheveux</span>
+                            <span>20 $</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between border-bottom py-3">
+                            <span>Coupe de cheveux longs</span>
+                            <span>28 $</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between border-bottom py-3">
+                            <span>Coupe de cheveux + barbe</span>
+                            <span>40 $</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between border-bottom py-3">
+                            <span>Skin fade</span>
+                            <span>25 $</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between border-bottom py-3">
+                            <span>Barbe et contour</span>
+                            <span>20 $</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between py-3">
+                            <span>Enfants de moins de 8 ans</span>
+                            <span>18 $</span>
+                        </div>
+
+                        <p class="text-muted small mt-2 text-end fst-italic">
+                            (taxes en sus)
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================================
+         Footer
+    ================================== -->
+
+    <footer class="pb-5">
+        <div class="container text-center">
+
+            <a href="./">
+                <img
+                    src="./img/logo-barbier-bw.svg"
+                    alt="Barbier BW"
+                    class="logo"
+                    style="max-width:69px"
+                >
+            </a>
+
+            <div class="d-flex justify-content-center">
+                <small>
+                    © 2025 Barbier BW. Tous droits réservés
+                    • Conception web par
+                    <a
+                        href="https://loogart.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-light"
+                    >
+                        Loogart
+                    </a>
+                </small>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="wood-pattern" aria-hidden="true"></div>
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        if (typeof AOS !== "undefined") {
+            AOS.init({
+                once: true,
+                duration: 800
+            });
+        }
+    </script>
+
+</body>
+</html>
