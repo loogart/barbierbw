@@ -59,7 +59,7 @@
 
     <!-- Manifest -->
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#161717">
+    <meta name="theme-color" content="#171514">
 
     <!-- Preload the hero image so it appears immediately -->
     <link rel="preload" as="image" href="./img/haircut-2.png" fetchpriority="high">
@@ -79,9 +79,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+        :root {
+            --bw-bronze: #a87b59;
+            --bw-bronze-dark: #8d6245;
+            --bw-sand: #c9b9a9;
+            --bw-dark: #171514;
+            --bw-cream: #f5eee7;
+        }
+
         body {
-            background: #161717;
-            color: #f5f5f5;
+            background: var(--bw-dark);
+            color: var(--bw-cream);
             font-family: 'Poppins', sans-serif;
         }
 
@@ -98,22 +106,63 @@
         }
 
         .logo {
-            width: 100px;
-            height: 180px;
+            display: block;
+            width: clamp(160px, 20vw, 220px);
+            height: auto;
+            margin-bottom: 1.5rem;
             object-fit: contain;
         }
+
+        .brand-link {
+            display: inline-block;
+        }
+
+        .brand-name {
+            color: var(--bw-sand);
+            letter-spacing: 0.12em;
+        }
+
+        .brand-initials { color: var(--bw-bronze); }
+
+        .btn-bronze {
+            --bs-btn-color: var(--bw-cream);
+            --bs-btn-border-color: var(--bw-bronze);
+            --bs-btn-hover-color: var(--bw-cream);
+            --bs-btn-hover-bg: var(--bw-bronze-dark);
+            --bs-btn-hover-border-color: var(--bw-bronze-dark);
+            --bs-btn-active-color: var(--bw-cream);
+            --bs-btn-active-bg: var(--bw-bronze-dark);
+            --bs-btn-active-border-color: var(--bw-bronze-dark);
+            --bs-btn-focus-shadow-rgb: 168, 123, 89;
+        }
+
+        .btn-bronze:focus-visible, .brand-link:focus-visible {
+            outline: 3px solid var(--bw-sand);
+            outline-offset: 4px;
+        }
+
+        .price-list {
+            background-color: var(--bw-cream);
+            color: var(--bw-dark);
+            --bs-border-color: #d9c8b8;
+        }
+
+        .price-list h2 { color: #704c33; }
+        .location-note { color: var(--bw-sand); }
+
+        .footer-logo { width: 100px; margin-inline: auto; }
 
         .barber-stripe {
             width: 100%;
             height: 4px;
             background: repeating-linear-gradient(
                 45deg,
-                red,
-                red 12px,
-                white 12px,
-                white 24px,
-                #1e37f0 24px,
-                #1e37f0 36px
+                var(--bw-bronze) 0,
+                var(--bw-bronze) 12px,
+                var(--bw-sand) 12px,
+                var(--bw-sand) 24px,
+                var(--bw-bronze-dark) 24px,
+                var(--bw-bronze-dark) 36px
             );
         }
 
@@ -122,12 +171,12 @@
             width: 5px;
             background: repeating-linear-gradient(
                 135deg,
-                red,
-                red 12px,
-                white 12px,
-                white 24px,
-                blue 24px,
-                blue 36px
+                var(--bw-bronze) 0,
+                var(--bw-bronze) 12px,
+                var(--bw-sand) 12px,
+                var(--bw-sand) 24px,
+                var(--bw-bronze-dark) 24px,
+                var(--bw-bronze-dark) 36px
             );
             position: fixed;
             left: 0;
@@ -136,8 +185,8 @@
         }
 
         .cta {
-            background-color: #0d47a1;
-            color: #fff;
+            background-color: var(--bw-bronze-dark);
+            color: var(--bw-cream);
         }
 
         .wood-pattern {
@@ -149,7 +198,7 @@
         }
 
         .team-section {
-            background-color: #161717;
+            background-color: var(--bw-dark);
         }
 
         .team-heading {
@@ -162,21 +211,21 @@
             font-weight: 500;
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #aeb5b5;
+            color: var(--bw-sand);
         }
 
         .team-card {
             height: 100%;
             overflow: hidden;
             border-radius: 20px;
-            background-color: #222424;
-            border: 1px solid rgba(255, 255, 255, 0.09);
+            background-color: #241f1b;
+            border: 1px solid rgba(168, 123, 89, 0.25);
             transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
         .team-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.25);
+            border-color: var(--bw-bronze);
         }
 
         .team-photo {
@@ -197,25 +246,25 @@
             margin-bottom: 5px;
             font-size: 1.5rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--bw-cream);
         }
 
         .team-role {
             margin: 0;
             font-size: 0.875rem;
-            color: #b9bdbd;
+            color: var(--bw-sand);
         }
 
         .team-stripe {
             height: 5px;
             background: repeating-linear-gradient(
                 45deg,
-                #d32f2f 0,
-                #d32f2f 12px,
-                #fff 12px,
-                #fff 24px,
-                #1e37f0 24px,
-                #1e37f0 36px
+                var(--bw-bronze) 0,
+                var(--bw-bronze) 12px,
+                var(--bw-sand) 12px,
+                var(--bw-sand) 24px,
+                var(--bw-bronze-dark) 24px,
+                var(--bw-bronze-dark) 36px
             );
         }
 
@@ -262,13 +311,13 @@
         <div class="container">
             <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-7 mb-4 mb-md-0 text-center text-md-start">
-                    <a href="./">
-                        <img src="./img/logo-barbier-bw.svg" alt="Logo Barbier BW" class="logo">
+                    <a href="./" class="brand-link" aria-label="Barbier B.W. — accueil">
+                        <img src="./img/barbier-bw-bronze.jpg" alt="Logo bronze Barbier B.W., avec un barbier et un rasoir" class="logo" width="928" height="1139" decoding="async">
                     </a>
 
-                    <div class="mt-0 h4">
+                    <div class="mt-0 h4 brand-name">
                         BARBIER
-                        <span style="color:#1976d2;">B.</span><span style="color:#d32f2f;">W</span>
+                        <span class="brand-initials">B.W.</span>
                     </div>
 
                     <h1>Coupes de cheveux pour hommes et enfants à Gatineau</h1>
@@ -281,7 +330,7 @@
                         📞 (873) 655-3347
                     </p>
 
-                    <a href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline-light mt-4">
+                    <a href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-bronze mt-4">
                         Passe-nous voir !
                     </a>
                 </div>
@@ -354,7 +403,7 @@
                     que ce soit pour les adultes ou les enfants.
                 </p>
 
-                <a href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light mt-3">
+                <a href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8" target="_blank" rel="noopener noreferrer" class="btn btn-bronze mt-3">
                     Entrez sans rendez-vous
                 </a>
             </div>
@@ -411,10 +460,10 @@
 
             <div class="text-center mt-5">
                 <p class="mb-3">Une coupe pour vous ou vos enfants ?</p>
-                <a href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg">
+                <a href="https://maps.app.goo.gl/z6PCK3PCStqGq7BN8" target="_blank" rel="noopener noreferrer" class="btn btn-bronze btn-lg">
                     Passez nous voir !
                 </a>
-                <p class="small text-secondary mt-3 mb-0">Sans rendez-vous · 811 Boul. Saint-René O, Gatineau</p>
+                <p class="small location-note mt-3 mb-0">Sans rendez-vous · 811 Boul. Saint-René O, Gatineau</p>
             </div>
         </div>
     </section>
@@ -446,7 +495,7 @@
 
                 <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
                     <div class="barber-stripe"></div>
-                    <div class="bg-white text-dark p-5 rounded-0">
+                    <div class="price-list p-4 p-sm-5 rounded-0">
                         <h2>Liste de prix</h2>
                         <div class="d-flex justify-content-between border-bottom py-3"><span>Coupe de cheveux</span><span>20 $</span></div>
                         <div class="d-flex justify-content-between border-bottom py-3"><span>Coupe de cheveux longs</span><span>28 $</span></div>
@@ -463,8 +512,8 @@
 
     <footer class="pb-5">
         <div class="container text-center">
-            <a href="./">
-                <img src="./img/logo-barbier-bw.svg" alt="Barbier BW" class="logo" style="max-width:69px">
+            <a href="./" class="brand-link" aria-label="Barbier B.W. — accueil">
+                <img src="./img/barbier-bw-bronze.jpg" alt="Barbier B.W." class="logo footer-logo" width="928" height="1139" loading="lazy" decoding="async">
             </a>
             <div class="d-flex justify-content-center">
                 <small>
